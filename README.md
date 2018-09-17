@@ -34,7 +34,7 @@ yarn add ngx-packery
 
 ```ts
 import { NgModule } from '@angular/core';
-import { NgxPackeryModule } from 'ngx-mask-input';
+import { NgxPackeryModule } from 'ngx-packery';
 
 import { AppComponent } from './app.component';
 
