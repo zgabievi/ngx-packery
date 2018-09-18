@@ -44,4 +44,7 @@ export interface NgxPackeryOptions {
 
   //
   imagesLoaded?: boolean;
+
+  //
+  draggabilly?: boolean;
 }

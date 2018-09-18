@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import Draggabilly from 'draggabilly';
 import imagesLoaded from 'imagesloaded';
 import Packery from 'packery';
 import { Subject } from 'rxjs';
@@ -58,10 +59,12 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
 
   //
   ngOnInit() {
-    this.pckry = new Packery(this.elementRef.nativeElement, {
+    const options: NgxPackeryOptions = {
       ...this.options,
       itemSelector: 'ngx-packery-item'
-    });
+    };
+
+    this.pckry = new Packery(this.elementRef.nativeElement, options);
 
     this.pckry.on('layoutComplete', items => this.layoutComplete.emit(items));
     this.pckry.on('dragItemPositioned', item =>
@@ -74,7 +77,18 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
       imagesLoaded(this.elementRef.nativeElement).on('progress', () => {
         this.pckry.layout();
       });
-      return;
+    }
+
+    if (this.options.draggabilly) {
+      const items = this.elementRef.nativeElement.querySelectorAll(
+        options.itemSelector
+      );
+
+      [].forEach.call(items, item => {
+        const draggie = new Draggabilly(item);
+
+        this.pckry.bindDraggabillyEvents(draggie);
+      });
     }
   }
 

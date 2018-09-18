@@ -1,23 +1,24 @@
 {
-  "name": "ngx-packery",
-  "version": "0.1.0",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "imagesloaded": "^4.1.4",
-    "packery": "^2.1.2",
-    "rxjs": "^6.0.0"
-  },
-  "repository": {
-		"type": "git",
-		"url": "git+https://github.com/zgabievi/ngx-packery.git"
-	},
-	"keywords": [
-		"grid",
-		"masonry",
-		"packery",
-		"layout"
-	],
-	"author": "Zura Gabievi <zura.gabievi@gmail.com>",
-	"license": "MIT"
+		"name": "ngx-packery",
+		"version": "0.1.0",
+		"peerDependencies": {
+				"@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+				"@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+				"imagesloaded": "^4.1.4",
+        "draggabilly": "^2.2.0",
+				"packery": "^2.1.2",
+				"rxjs": "^6.0.0"
+		},
+		"repository": {
+				"type": "git",
+				"url": "git+https://github.com/zgabievi/ngx-packery.git"
+		},
+		"keywords": [
+				"grid",
+				"masonry",
+				"packery",
+				"layout"
+		],
+		"author": "Zura Gabievi <zura.gabievi@gmail.com>",
+		"license": "MIT"
 }
