@@ -1,3 +1,4 @@
+import { imagesLoaded } from 'imagesloaded';
 export interface NgxPackeryOptions {
   //
   itemSelector?: string;
@@ -40,4 +41,7 @@ export interface NgxPackeryOptions {
 
   //
   initLayout?: boolean;
+
+  //
+  imagesLoaded?: boolean;
 }

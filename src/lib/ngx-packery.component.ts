@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import imagesLoaded from 'imagesloaded';
 import Packery from 'packery';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -68,6 +69,13 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
     );
     this.pckry.on('fitComplete', item => this.fitComplete.emit(item));
     this.pckry.on('removeComplete', items => this.removeComplete.emit(items));
+
+    if (this.options.imagesLoaded) {
+      imagesLoaded(this.elementRef.nativeElement).on('progress', () => {
+        this.pckry.layout();
+      });
+      return;
+    }
   }
 
   //

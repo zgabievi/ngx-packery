@@ -4,6 +4,7 @@
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "imagesloaded": "^4.1.4",
     "packery": "^2.1.2",
     "rxjs": "^6.0.0"
   },
