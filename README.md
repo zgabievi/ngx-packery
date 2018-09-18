@@ -108,7 +108,7 @@ If you want to call some methods on packery element, you can use service created
 For example if you want to remote element from grid you can do it:
 
 ```ts
-constructor(private pckryService: PackeryService) {}
+constructor(private pckryService: NgxPackeryService) {}
 
 removeItem() {
   this.pckryService.remove('.item-2');
