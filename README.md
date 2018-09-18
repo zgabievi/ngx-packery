@@ -117,6 +117,12 @@ removeItem() {
 
 Full list of methods can be found [here](https://packery.metafizzy.co/methods.html).
 
+### Plugins
+
+If you want to have dragging functionallity, you can pass `draggabilly: true` as option. It's using [Draggabilly](https://draggabilly.desandro.com/) library
+
+If you want to order grid after images has been loaded, you can pass `imagesLoaded: true` as option. It's using [imagesLoaded](https://imagesloaded.desandro.com/) library
+
 ## Changelog
 
 Please see [Changelog Page](https://github.com/zgabievi/ngx-packery/releases) for more information what has changed recently.
