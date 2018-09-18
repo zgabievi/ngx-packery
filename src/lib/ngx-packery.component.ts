@@ -1,11 +1,15 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import Draggabilly from 'draggabilly';
-import imagesLoaded from 'imagesloaded';
+// import Draggabilly from 'draggabilly';
+// import imagesLoaded from 'imagesloaded';
 import Packery from 'packery';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { NgxPackeryOptions } from './ngx-packery-options';
 import { NgxPackeryService } from './ngx-packery.service';
+
+declare var require: any;
+let Draggabilly: any;
+let imagesLoaded: any;
 
 @Component({
   selector: 'ngx-packery',
@@ -74,12 +78,16 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
     this.pckry.on('removeComplete', items => this.removeComplete.emit(items));
 
     if (this.options.imagesLoaded) {
+      imagesLoaded = require('imagesloaded');
+
       imagesLoaded(this.el.nativeElement).on('progress', () => {
         this.pckry.layout();
       });
     }
 
     if (this.options.draggabilly) {
+      Draggabilly = require('draggabilly');
+
       const items = this.el.nativeElement.querySelectorAll(
         options.itemSelector
       );

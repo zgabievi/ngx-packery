@@ -3,13 +3,13 @@
   "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "rxjs": "^6.0.0"
   },
   "dependencies": {
     "imagesloaded": "^4.1.4",
     "draggabilly": "^2.2.0",
-    "packery": "^2.1.2",
-    "rxjs": "^6.0.0"
+    "packery": "^2.1.2"
   },
   "repository": {
     "type": "git",
