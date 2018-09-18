@@ -41,7 +41,7 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
 
   //
   constructor(
-    private elementRef: ElementRef,
+    private el: ElementRef,
     private pckryService: NgxPackeryService
   ) {
     this.pckryService.action$
@@ -64,7 +64,7 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
       itemSelector: 'ngx-packery-item'
     };
 
-    this.pckry = new Packery(this.elementRef.nativeElement, options);
+    this.pckry = new Packery(this.el.nativeElement, options);
 
     this.pckry.on('layoutComplete', items => this.layoutComplete.emit(items));
     this.pckry.on('dragItemPositioned', item =>
@@ -74,13 +74,13 @@ export class NgxPackeryComponent implements OnInit, OnDestroy {
     this.pckry.on('removeComplete', items => this.removeComplete.emit(items));
 
     if (this.options.imagesLoaded) {
-      imagesLoaded(this.elementRef.nativeElement).on('progress', () => {
+      imagesLoaded(this.el.nativeElement).on('progress', () => {
         this.pckry.layout();
       });
     }
 
     if (this.options.draggabilly) {
-      const items = this.elementRef.nativeElement.querySelectorAll(
+      const items = this.el.nativeElement.querySelectorAll(
         options.itemSelector
       );
 
